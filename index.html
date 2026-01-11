@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BHAI BROTHERS - Free Fire Diamond Top-up</title>
+    <style>
+        :root {
+            --primary-color: #ff6b00;
+            --secondary-color: #ffcc00;
+            --accent-color: #22c55e;
+            --danger-color: #ef4444;
+            --bg-color: #0a0a0a;
+            --card-bg: #1a1a1a;
+            --text-color: #ffffff;
+            --border-color: #333333;
+            --shadow: 0 4px 20px rgba(255, 107, 0, 0.2);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', 'Arial', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            background-image: 
+                radial-gradient(circle at 20% 30%, rgba(255, 107, 0, 0.1) 0%, transparent 25%),
+                radial-gradient(circle at 80% 70%, rgba(255, 204, 0, 0.1) 0%, transparent 25%);
+        }
+
+        .container {
+            max-width: 650px;
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid var(--primary-color);
+            position: relative;
+        }
+
+        .brand-title {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 10px;
+        }
+
+        h1 {
+            color: var(--secondary-color);
+            text-shadow: 0 0 15px rgba(255, 204, 0, 0.7);
+            font-size: 2.8rem;
+            margin: 0;
+            background: linear-gradient(to right, var(--secondary-color), var(--primary-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .tagline {
+            font-size: 1.2rem;
+            color: var(--primary-color);
+            font-weight: bold;
+            margin-bottom: 5px;
+            letter-spacing: 1px;
+        }
+
+        .subtitle {
+            font-size: 1rem;
+            color: #aaa;
+            margin-top: 5px;
+        }
+
+        .highlight {
+            color: var(--secondary-color);
+            font-weight: bold;
+        }
+
+        .payment-info {
+            background: linear-gradient(45deg, rgba(255, 107, 0, 0.9), rgba(255, 204, 0, 0.9));
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 25px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            border: 2px solid var(--secondary-color);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .payment-info::before {
+            content: "💎";
+            position: absolute;
+            font-size: 4rem;
+            opacity: 0.1;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .payment-info h3 {
+            margin-bottom: 10px;
+            color: #000;
+            font-size: 1.3rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .payment-number {
+            font-size: 1.5rem;
+            font-weight: bold;
+            background: rgba(0, 0, 0, 0.8);
+            color: var(--secondary-color);
+            padding: 12px 20px;
+            border-radius: 10px;
+            display: inline-block;
+            margin: 15px 0;
+            letter-spacing: 2px;
+            border: 2px solid var(--primary-color);
+            position: relative;
+            z-index: 1;
+        }
+
+        .payment-instruction {
+            font-size: 1rem;
+            color: #000;
+            font-weight: 500;
+            position: relative;
+            z-index: 1;
+        }
+
+        .price-card {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            margin-bottom: 25px;
+            border: 2px solid var(--primary-color);
+            position: relative;
+        }
+
+        .price-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+            border-radius: 15px 15px 0 0;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: 600;
+            color: var(--secondary-color);
+            font-size: 1.1rem;
+        }
+
+        .input-icon {
+            position: relative;
+        }
+
+        .input-icon i {
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--primary-color);
+            font-size: 1.2rem;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 15px 15px 15px 50px;
+            border-radius: 10px;
+            border: 2px solid var(--border-color);
+            background: #222;
+            color: white;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+        }
+
+        input:focus, select:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(255, 107, 0, 0.3);
+            background: #2a2a2a;
+        }
+
+        .package-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+            gap: 12px;
+            margin-bottom: 25px;
+        }
+
+        .package-option {
+            background: #222;
+            border: 2px solid var(--border-color);
+            border-radius: 10px;
+            padding: 15px;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .package-option:hover {
+            border-color: var(--primary-color);
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(255, 107, 0, 0.3);
+        }
+
+        .package-option.active {
+            background: linear-gradient(135deg, rgba(255, 107, 0, 0.2), rgba(255, 204, 0, 0.1));
+            border-color: var(--secondary-color);
+            box-shadow: 0 0 20px rgba(255, 204, 0, 0.4);
+        }
+
+        .package-badge {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            background: var(--primary-color);
+            color: white;
+            font-size: 0.7rem;
+            padding: 2px 8px;
+            border-radius: 10px;
+            font-weight: bold;
+        }
+
+        .package-name {
+            font-weight: bold;
+            color: var(--secondary-color);
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+
+        .package-price {
+            color: var(--accent-color);
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-top: 5px;
+        }
+
+        .btn-order {
+            width: 100%;
+            padding: 20px;
+            background: linear-gradient(to right, var(--primary-color), #ff8500);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-size: 1.3rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 25px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .btn-order:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(255, 107, 0, 0.4);
+            background: linear-gradient(to right, #ff8500, var(--primary-color));
+        }
+
+        .btn-order:active {
+            transform: translateY(0);
+        }
+
+        .footer-note {
+            text-align: center;
+            font-size: 0.95rem;
+            color: #aaa;
+            margin-top: 25px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border-color);
+            width: 100%;
+            line-height: 1.8;
+        }
+
+        .stats-bar {
+            display: flex;
+            justify-content: space-around;
+            background: rgba(255, 107, 0, 0.1);
+            border-radius: 10px;
+            padding: 15px;
+            margin: 20px 0;
+            border: 1px solid rgba(255, 107, 0, 0.3);
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--secondary-color);
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: #aaa;
+        }
+
+        .status-indicator {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 20px;
+            font-size: 1rem;
+        }
+
+        .status-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: var(--accent-color);
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.2); opacity: 0.7; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        .validation-error {
+            color: var(--danger-color);
+            font-size: 0.9rem;
+            margin-top: 8px;
+            display: none;
+            font-weight: 500;
+        }
+
+        .brothers-badge {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+            color: #000;
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1.2rem;
+            transform: rotate(-5deg);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+            z-index: 100;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 700px) {
+            .container {
+                padding: 0 10px;
+            }
+            
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            .package-options {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .payment-number {
+                font-size: 1.2rem;
+            }
+            
+            .brothers-badge {
+                position: static;
+                margin-top: 20px;
+                transform: none;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .package-options {
+                grid-template-columns: 1fr;
+            }
+            
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            .stats-bar {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <div class="brand-title">
+            <i class="fas fa-crown" style="color: var(--secondary-color); font-size: 2.5rem;"></i>
+            <h1>BHAI BROTHERS</h1>
+            <i class="fas fa-gem" style="color: var(--primary-color); font-size: 2.5rem;"></i>
+        </div>
+        <p class="tagline">🎮 Free Fire Diamond Top-up Service</p>
+        <p class="subtitle">সবচেয়ে দ্রুত ও নিরাপদ টপ-আপ সার্ভিস</p>
+        <p class="subtitle">ডেলিভারি: <span class="highlight">৫-১০ মিনিটের মধ্যে</span></p>
+    </header>
+
+    <div class="payment-info">
+        <h3><i class="fas fa-money-bill-wave"></i> পেমেন্ট তথ্য</h3>
+        <p class="payment-number">বিকাশ / নগদ: 01540651156</p>
+        <p class="payment-instruction">টাকা পাঠিয়ে নিচে ট্রানজেকশন আইডি দিন</p>
+        <p class="payment-instruction">(সেন্ড মানি অপশন ব্যবহার করুন)</p>
+    </div>
+
+    <div class="stats-bar">
+        <div class="stat-item">
+            <span class="stat-number" id="totalOrders">1542</span>
+            <span class="stat-label">মোট অর্ডার</span>
+        </div>
+        <div class="stat-item">
+            <span class="stat-number" id="deliveryTime">5-10</span>
+            <span class="stat-label">মিনিট ডেলিভারি</span>
+        </div>
+        <div class="stat-item">
+            <span class="stat-number">100%</span>
+            <span class="stat-label">সেফ</span>
+        </div>
+    </div>
+
+    <div class="price-card">
+        <form id="orderForm">
+            <div class="form-group">
+                <label for="uid"><i class="fas fa-user"></i> প্লেয়ার আইডি (UID):</label>
+                <div class="input-icon">
+                    <i class="fas fa-id-card"></i>
+                    <input type="text" id="uid" placeholder="উদাহরণ: 123456789" required>
+                </div>
+                <div class="validation-error" id="uidError">সঠিক UID দিন (সংখ্যা)</div>
+            </div>
+
+            <div class="form-group">
+                <label><i class="fas fa-box-open"></i> প্যাকেজ বেছে নিন:</label>
+                <div class="package-options" id="packageOptions">
+                    <!-- Package options will be populated by JavaScript -->
+                </div>
+                <div class="input-icon">
+                    <i class="fas fa-gem"></i>
+                    <select id="package" required>
+                        <option value="">প্যাকেজ সিলেক্ট করুন</option>
+                        <option value="25 Diamonds - 24 TK">25 Diamonds - 24 TK</option>
+                        <option value="50 Diamonds - 45 TK">50 Diamonds - 45 TK</option>
+                        <option value="115 Diamonds - 78 TK">115 Diamonds - 78 TK</option>
+                        <option value="240 Diamonds - 160 TK">240 Diamonds - 160 TK</option>
+                        <option value="480 Diamonds - 310 TK">480 Diamonds - 310 TK</option>
+                        <option value="610 Diamonds - 390 TK">610 Diamonds - 390 TK</option>
+                        <option value="Weekly - 160 TK">সাপ্তাহিক মেম্বারশিপ - 160 TK</option>
+                        <option value="Monthly - 770 TK">মাসিক মেম্বারশিপ - 770 TK</option>
+                    </select>
+                </div>
+                <div class="validation-error" id="packageError">একটি প্যাকেজ সিলেক্ট করুন</div>
+            </div>
+
+            <div class="form-group">
+                <label for="method"><i class="fas fa-wallet"></i> পেমেন্ট মেথড:</label>
+                <div class="input-icon">
+                    <i class="fas fa-credit-card"></i>
+                    <select id="method" required>
+                        <option value="Bkash">বিকাশ (Bkash)</option>
+                        <option value="Nagad">নগদ (Nagad)</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="trxid"><i class="fas fa-receipt"></i> ট্রানজেকশন আইডি (TrxID):</label>
+                <div class="input-icon">
+                    <i class="fas fa-hashtag"></i>
+                    <input type="text" id="trxid" placeholder="উদাহরণ: 8N7X2WABCDEF" required>
+                </div>
+                <div class="validation-error" id="trxidError">ট্রানজেকশন আইডি দিন</div>
+            </div>
+
+            <button type="button" class="btn-order" onclick="sendToWhatsApp()">
+                <i class="fab fa-whatsapp"></i> অর্ডার কনফার্ম করুন
+            </button>
+            
+            <div class="status-indicator">
+                <div class="status-dot"></div>
+                <span>সিস্টেম একটিভ | আজকের অর্ডার: <span id="todayOrders">42</span></span>
+            </div>
+        </form>
+    </div>
+
+    <p class="footer-note">
+        <i class="fas fa-shield-alt"></i> ১০০% নিরাপদ লেনদেন | ২৪x৭ কাস্টমার সার্পোর্ট<br>
+        কোনো সমস্যা হলে কল করুন: <span class="highlight">01540651156</span><br>
+        <i class="fas fa-bolt"></i> সর্বোচ্চ ১০ মিনিটের মধ্যে ডায়মন্ড ডেলিভারি<br>
+        &copy; ২০২৪ BHAI BROTHERS - All Rights Reserved
+    </p>
+    
+    <div class="brothers-badge">
+        💎 BHAI BROTHERS 💎
+    </div>
+</div>
+
+<script>
+    // Package data with badges
+    const packages = [
+        { name: "25 Diamonds", price: "24 TK", badge: "সবচেয়ে জনপ্রিয়" },
+        { name: "50 Diamonds", price: "45 TK", badge: "ভালো অফার" },
+        { name: "115 Diamonds", price: "78 TK", badge: "বেস্ট ভ্যালু" },
+        { name: "240 Diamonds", price: "160 TK", badge: "হট ডিল" },
+        { name: "480 Diamonds", price: "310 TK", badge: "মেগা ডিল" },
+        { name: "610 Diamonds", price: "390 TK", badge: "এক্সক্লুসিভ" },
+        { name: "Weekly Membership", price: "160 TK", badge: "রেগুলার" },
+        { name: "Monthly Membership", price: "770 TK", badge: "প্রিমিয়াম" }
+    ];
+
+    // Populate package options
+    function populatePackageOptions() {
+        const container = document.getElementById('packageOptions');
+        
+        packages.forEach((pkg, index) => {
+            const option = document.createElement('div');
+            option.className = 'package-option';
+            option.innerHTML = `
+                ${pkg.badge ? `<div class="package-badge">${pkg.badge}</div>` : ''}
+                <div class="package-name">${pkg.name}</div>
+                <div class="package-price">${pkg.price}</div>
+            `;
+            
+            // Set click event
+            option.addEventListener('click', () => {
+                // Remove active class from all options
+                document.querySelectorAll('.package-option').forEach(opt => {
+                    opt.classList.remove('active');
+                });
+                
+                // Add active class to clicked option
+                option.classList.add('active');
+                
+                // Set select value
+                document.getElementById('package').value = `${pkg.name} - ${pkg.price}`;
+                
+                // Hide error
+                document.getElementById('packageError').style.display = 'none';
+            });
+            
+            container.appendChild(option);
+        });
+    }
+
+    // Validate form inputs
+    function validateForm() {
+        let isValid = true;
+        
+        // UID validation (numeric)
+        const uid = document.getElementById('uid').value;
+        const uidError = document.getElementById('uidError');
+        if (!uid || !/^\d+$/.test(uid) || uid.length < 6) {
+            uidError.style.display = 'block';
+            uidError.textContent = 'সঠিক UID দিন (অন্তত ৬ সংখ্যা)';
+            isValid = false;
+        } else {
+            uidError.style.display = 'none';
+        }
+        
+        // Package validation
+        const package = document.getElementById('package').value;
+        const packageError = document.getElementById('packageError');
+        if (!package) {
+            packageError.style.display = 'block';
+            isValid = false;
+        } else {
+            packageError.style.display = 'none';
+        }
+        
+        // TrxID validation
+        const trxid = document.getElementById('trxid').value;
+        const trxidError = document.getElementById('trxidError');
+        if (!trxid || trxid.length < 8) {
+            trxidError.style.display = 'block';
+            trxidError.textContent = 'সঠিক ট্রানজেকশন আইডি দিন (অন্তত ৮ অক্ষর)';
+            isValid = false;
+        } else {
+            trxidError.style.display = 'none';
+        }
+        
+        return isValid;
+    }
+
+    // Send order to WhatsApp
+    function sendToWhatsApp() {
+        if (!validateForm()) {
+            return;
+        }
+        
+        const uid = document.getElementById('uid').value;
+        const package = document.getElementById('package').value;
+        const method = document.getElementById('method').value;
+        const trxid = document.getElementById('trxid').value;
+        const myNumber = "8801748320647";
+        
+        // Format current date and time
+        const now = new Date();
+        const dateTime = `${now.getDate()}/${now.getMonth()+1}/${now.getFullYear()} ${now.getHours()}:${now.getMinutes()}`;
+        
+        const message = `🟠 *BHAI BROTHERS - NEW ORDER* 🟠%0A%0A📅 *তারিখ:* ${dateTime}%0A👤 *UID:* ${uid}%0A💎 *প্যাকেজ:* ${package}%0A💳 *পেমেন্ট:* ${method}%0A🔢 *TrxID:* ${trxid}%0A%0A🚀 *দ্রুত ডেলিভারি দিন!*`;
+        const whatsappUrl = `https://wa.me/${myNumber}?text=${message}`;
+        
+        // Update stats
+        const todayOrders = document.getElementById('todayOrders');
+        todayOrders.textContent = parseInt(todayOrders.textContent) + 1;
+        
+        const totalOrders = document.getElementById('totalOrders');
+        totalOrders.textContent = parseInt(totalOrders.textContent) + 1;
+        
+        // Show success message
+        alert("✅ অর্ডার সফলভাবে সাবমিট হয়েছে! ওয়াটসঅ্যাপ ওপেন হচ্ছে...");
+        
+        // Open WhatsApp
+        window.open(whatsappUrl, '_blank');
+        
+        // Reset form after 1 second
+        setTimeout(() => {
+            document.getElementById('orderForm').reset();
+            document.querySelectorAll('.package-option').forEach(opt => {
+                opt.classList.remove('active');
+            });
+        }, 1000);
+    }
+
+    // Initialize page
+    document.addEventListener('DOMContentLoaded', function() {
+        // Populate package options
+        populatePackageOptions();
+        
+        // Add input validation
+        document.getElementById('uid').addEventListener('input', validateForm);
+        document.getElementById('package').addEventListener('change', validateForm);
+        document.getElementById('trxid').addEventListener('input', validateForm);
+        
+        // Auto-format UID input
+        document.getElementById('uid').addEventListener('blur', function() {
+            if(this.value && /^\d+$/.test(this.value)) {
+                this.value = this.value.trim();
+            }
+        });
+        
+        // Simulate order count updates
+        setInterval(() => {
+            const todayOrders = document.getElementById('todayOrders');
+            const currentCount = parseInt(todayOrders.textContent);
+            // Occasionally add random orders (simulating other customers)
+            if (Math.random() > 0.8 && currentCount < 100) {
+                todayOrders.textContent = currentCount + 1;
+            }
+        }, 60000); // Every minute
+    });
+</script>
+
+</body>
+</html>
